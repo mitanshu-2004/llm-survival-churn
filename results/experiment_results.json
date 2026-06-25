@@ -1,0 +1,126 @@
+{
+  "n_samples": 10000,
+  "n_train": 8000,
+  "n_test": 2000,
+  "churn_rate": 0.1062,
+  "holdout_seed": 1729,
+  "baseline": {
+    "features": [
+      "log_playtime_2weeks",
+      "log_items_count"
+    ],
+    "cv_cindex": {
+      "mean": 0.5956752761499443,
+      "std": 0.01979477516622732,
+      "folds": [
+        0.567233723545355,
+        0.5871282590525493,
+        0.5945208025932079,
+        0.6015480569326723,
+        0.6279455386259373
+      ]
+    },
+    "holdout_cindex": 0.6395577288737266,
+    "apparent_cindex": 0.5957793460908181
+  },
+  "augmented": {
+    "features": [
+      "log_playtime_2weeks",
+      "log_items_count",
+      "sentiment_score",
+      "frustration_level",
+      "technical_issue",
+      "value_complaint",
+      "engagement_dropped",
+      "positive_signal"
+    ],
+    "cv_cindex": {
+      "mean": 0.8644411910112503,
+      "std": 0.010282062167613902,
+      "folds": [
+        0.8531543740268728,
+        0.8813597023376203,
+        0.8656603269393872,
+        0.8543067327682712,
+        0.8677248189841
+      ]
+    },
+    "holdout_cindex": 0.8735882545944728,
+    "apparent_cindex": 0.8642489936776356
+  },
+  "delta_cindex": 0.26876591486130597,
+  "delta_holdout_cindex": 0.23403052572074612,
+  "lr_test": {
+    "lr_statistic": 1276.7449035876634,
+    "df": 6,
+    "p_value": 1.1717789552772803e-272,
+    "log_p_value": -626.1446222257259,
+    "significant": true
+  },
+  "hazard_ratios": [
+    {
+      "feature": "frustration_level",
+      "HR": 2.1896873144556537,
+      "HR_lower": 1.8387099227837052,
+      "HR_upper": 2.60766011847538,
+      "p_value": 1.4525018583745436e-18,
+      "significant": true
+    },
+    {
+      "feature": "sentiment_score",
+      "HR": 0.548808093843667,
+      "HR_lower": 0.49838332666177454,
+      "HR_upper": 0.6043346712373477,
+      "p_value": 3.0441716636752438e-34,
+      "significant": true
+    },
+    {
+      "feature": "positive_signal",
+      "HR": 0.5538139501159237,
+      "HR_lower": 0.493343682848485,
+      "HR_upper": 0.6216961968016103,
+      "p_value": 1.2832155521812745e-23,
+      "significant": true
+    },
+    {
+      "feature": "value_complaint",
+      "HR": 1.6826466007243759,
+      "HR_lower": 1.4309220671845562,
+      "HR_upper": 1.97865393780675,
+      "p_value": 3.097971473920649e-10,
+      "significant": true
+    },
+    {
+      "feature": "engagement_dropped",
+      "HR": 1.5624414965596993,
+      "HR_lower": 1.334759811812726,
+      "HR_upper": 1.8289608426674968,
+      "p_value": 2.803472444168656e-08,
+      "significant": true
+    },
+    {
+      "feature": "technical_issue",
+      "HR": 1.4468402681552806,
+      "HR_lower": 1.2572226645138203,
+      "HR_upper": 1.6650564936841645,
+      "p_value": 2.554040979910154e-07,
+      "significant": true
+    },
+    {
+      "feature": "log_playtime_2weeks",
+      "HR": 0.7622625715882982,
+      "HR_lower": 0.7130975941996408,
+      "HR_upper": 0.8148172603170145,
+      "p_value": 1.461342963772434e-15,
+      "significant": true
+    },
+    {
+      "feature": "log_items_count",
+      "HR": 1.0939342787220097,
+      "HR_lower": 1.034832671071449,
+      "HR_upper": 1.1564113113321093,
+      "p_value": 0.0015336538424152988,
+      "significant": true
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "variants": {
+    "baseline": {
+      "n_features": 2,
+      "features": [
+        "log_playtime_2weeks",
+        "log_items_count"
+      ],
+      "cv_cindex": {
+        "mean": 0.6038587320825843,
+        "std": 0.012250850289383794,
+        "folds": [
+          0.5805563211478874,
+          0.6062546326818712,
+          0.6165377329958773,
+          0.6098527725709294,
+          0.6060922010163557
+        ]
+      },
+      "delta_vs_baseline": 0.0
+    },
+    "non_polarity": {
+      "n_features": 4,
+      "features": [
+        "log_playtime_2weeks",
+        "log_items_count",
+        "technical_issue",
+        "engagement_dropped"
+      ],
+      "cv_cindex": {
+        "mean": 0.7481094016902966,
+        "std": 0.01712434195527648,
+        "folds": [
+          0.7370733214736122,
+          0.7456988226004104,
+          0.7685342151759705,
+          0.7657991956177547,
+          0.7234414535837349
+        ]
+      },
+      "delta_vs_baseline": 0.14425066960771227
+    },
+    "polarity_only": {
+      "n_features": 6,
+      "features": [
+        "log_playtime_2weeks",
+        "log_items_count",
+        "sentiment_score",
+        "frustration_level",
+        "positive_signal",
+        "value_complaint"
+      ],
+      "cv_cindex": {
+        "mean": 0.8650068814828602,
+        "std": 0.001391086878114411,
+        "folds": [
+          0.8647762104014766,
+          0.8637572493323351,
+          0.8633322986804196,
+          0.8669584523831189,
+          0.8662101966169509
+        ]
+      },
+      "delta_vs_baseline": 0.26114814940027586
+    },
+    "full_augmented": {
+      "n_features": 8,
+      "features": [
+        "log_playtime_2weeks",
+        "log_items_count",
+        "technical_issue",
+        "engagement_dropped",
+        "sentiment_score",
+        "frustration_level",
+        "positive_signal",
+        "value_complaint"
+      ],
+      "cv_cindex": {
+        "mean": 0.8655750130940755,
+        "std": 0.001628163383027174,
+        "folds": [
+          0.8649223689375527,
+          0.8640235703404067,
+          0.8642993012113398,
+          0.8684853227538263,
+          0.8661445022272517
+        ]
+      },
+      "delta_vs_baseline": 0.26171628101149114
+    }
+  },
+  "lr_tests": {
+    "polarity_only_vs_baseline": {
+      "lr_statistic": 1478.1519137483428,
+      "df": 4,
+      "p_value": 0.0,
+      "log_p_value": -733.1637033557441,
+      "significant": true
+    },
+    "non_polarity_vs_baseline": {
+      "lr_statistic": 700.1884265458175,
+      "df": 2,
+      "p_value": 9.036807462082577e-153,
+      "log_p_value": -350.09421327290875,
+      "significant": true
+    },
+    "full_vs_baseline": {
+      "lr_statistic": 1553.1682225677796,
+      "df": 6,
+      "p_value": 0.0,
+      "log_p_value": -764.6605957294942,
+      "significant": true
+    }
+  },
+  "decomposition": {
+    "defensible_predictive_lift": 0.14425066960771227,
+    "polarity_lift": 0.26114814940027586,
+    "full_augmented_lift": 0.26171628101149114
+  }
+}
